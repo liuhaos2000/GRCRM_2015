@@ -1,0 +1,59 @@
+*{
+	-webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉链接iphone高亮*/
+}
+a{
+	outline:none;
+}
+input {
+	/*-webkit-appearance:none; 去除iphone默认input样式*/
+}
+
+img{
+	margin:0 auto;
+}
+
+/*head*/
+.head-top{
+	
+}
+.head-row {
+	background-color: #00bdec;
+	height: 52px;
+	text-align: center;
+}
+.head-row-text {
+	font-family:'SimHei',sans-serif;
+	font-size:1em;
+	margin:0 0 0 0;
+	color:#FFFFFF;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	
+}
+.col-head{
+	height: 52px;
+}
+.head-back{
+    position: absolute;
+	left: 50%;
+	top:50%;
+	-webkit-transform: translateX(-50%) translateY(-45%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	color:#FFFFFF;
+	font-size:1.6em;
+}
+/*cardinfo*/
+.cardinfo-row{
+	padding: 10% 0 10% 0;
+	border-bottom:6px solid #e5e5e5;
+}
+.cardinfo-col-left{
+}
+.cardinfo-col-right{
+	padding-top: 8%;
+}

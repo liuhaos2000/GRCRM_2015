@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    <struts>  
+    <package name="OrderInfo" extends="struts-default">  
+        <action name="orderSearch" class="demo.process.GetOrderInfoProcess" method="execute">  
+            <result name="success">/orderinfo.jsp</result>  
+        </action>  
+         <action name="orderAdd" class="demo.process.AddOrderInfoProcess" method="execute">  
+            <result name="success">/orderplaceadd.jsp</result>  
+        </action>
+         <action name="orderUpdate" class="demo.process.UpdateOrderInfoProcess" method="execute">  
+            <result name="success">/orderplaceadd.jsp</result>  
+        </action>
+         <action name="cardList" class="demo.process.UpdateOrderInfoProcess" method="execute">  
+            <result name="success">/orderplace.jsp</result>  
+        </action>            
+    </package>  
+</struts>

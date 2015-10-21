@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding= "UTF-8"?>
+<!DOCTYPE sqlMap		
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"		 
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+   
+<sqlMap namespace="transferinformation" >
+	   <typeAlias alias="tfObject" type="demo.dao.transferinformation" />
+
+	   <select id= "findTransferinformationByName" parameterClass ="java.lang.Integer"
+				   resultClass="tfObject" >
+			select * from transferinformation where orderid = #orderid#
+	   </select>
+</sqlMap>
