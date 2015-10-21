@@ -71,7 +71,7 @@ try{
 }
 if(ddwhoneList.size()!=0)
 {
-	 out.print("<table class='myTable' align='center' width=100%  id='orderTable'>");
+	 out.print("<table class='table table-striped' align='center' width=100%  id='orderTable'>");
 	 out.print("<tr id='orderTr' bgcolor='#3DB7CC'>");
      out.print("<th align='center'>"+"订单号"+"</th>");
 	 out.print("<th align='center'>"+"商品"+"</th>");

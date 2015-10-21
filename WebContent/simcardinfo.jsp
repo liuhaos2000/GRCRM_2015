@@ -19,13 +19,13 @@
     <header class="head-top" role="navigation">
         <div class="container">
             <div class="row head-row">
-                <div class="col-md-3 col-sm-3 col-xs-3 col-head">
+                <div class="col-md-2 col-sm-2 col-xs-2 col-head">
                     <a class="head-back" href="javascript:history.back();"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6 col-head">
+                <div class="col-md-8 col-sm-8 col-xs-8 col-head">
                     <p class="head-row-text">请选择SIM卡</p>
                 </div>
-                <div class="col-md-3 col-sm-3 col-xs-3 col-head">
+                <div class="col-md-2 col-sm-2 col-xs-2 col-head">
                     <a class="head-back" href="/GRCRM_2015"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
                 </div>
             </div>
@@ -73,23 +73,12 @@
 <script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-var UrlConfig = {
-        path:'<%=request.getContextPath()%>',
-        delItemToCart:'<%=request.getContextPath()%>/app/mobile/cart/delItemFromCart',
-    };
 $(document).ready(function() {
-    //
     $(function(){
         $("#main-div").height($(window).height()-$("header").height());
         $("#main-div").css({"overflow":"auto"});
     });
 });
-
-function autoCheck() {
-    $(":checkbox").each(function(){
-           $(this).iCheck('check');
-    });  
-}
 </script>
 </body>
 </html>

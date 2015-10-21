@@ -57,3 +57,80 @@ img{
 .cardinfo-col-right{
 	padding-top: 8%;
 }
+.cardinfo-col-right2{
+	padding-top: 5%;
+}
+.buycard-img{
+	width: 100%;
+	padding: 0 15px 0 15px;
+}
+.label-text{
+	font-family:'SimHei',sans-serif;
+	font-size:1.1em;
+	margin:0 0 0 0;
+	color:#000000;
+	text-align: right;
+	padding:5px 0 0 10px; 
+	font-weight: 200;
+}
+.buycard-tabs{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/*foot*/
+.tool_foot{
+    background-color: #ffffff;
+	border-top:1px solid #e5e5e5;
+	position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: block;
+    clear: none;
+}
+.footer-row{
+	overflow:hidden;
+}
+.a-btn{
+	margin: 10px 0px 10px 10px ;
+	width:90%;
+}
+.buycardname{
+	font-family:'SimHei',sans-serif;
+	font-size:1.2em;
+	color:#000000;
+	text-align: left;
+	padding: 10px 0 0 10%;
+	border-top:5px solid #e5e5e5;
+}
+.buycardname2{
+	font-family:'SimHei',sans-serif;
+	font-size:1.2em;
+	color:#000000;
+	text-align: left;
+}
+.row-bottom{
+	border-bottom:5px solid #e5e5e5;
+	padding-bottom: 13px;
+}
+.row-top{
+	padding-top: 13px;
+}
+.row-top-m{
+	margin-top: 15px;
+}
+.foot-text{
+	padding-top: 15px;
+}
+.red-text{
+	color: red;
+}
+.long-text{
+	text-align: left;
+}
+.lie-text{
+	padding-top: 20px;
+	text-align: right;
+	color: gray;
+}

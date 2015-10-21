@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <%@ page import="java.util.List" %>
 <%@ page import="demo.javabean.CardInfo" %>
 <%@ page import="org.apache.struts2.ServletActionContext" %>
@@ -48,94 +50,118 @@ try{
 
 pord = (CardInfo)ddwhoneList.get(0);
 %> 
+<!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <head>
-    <meta charset="utf-8">
-    <title><%=pord.getProductname()%></title>
-    <link rel="stylesheet" media="screen" href="styles.css" rel="external nofollow"  >
-    <style type="text/css">
-    button.submit {
-    background-color: #68b12f;
-    font-weight: bold;
-    padding: 6px 20px
-    }
-    
-    body {font: 16px/25px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;}
-.order_form h2, .order_form label {font-family:Georgia, Times, "Times New Roman", serif;}
-.form_hint, .required_notification {font-size: 32px;}
+<meta charset="utf-8">
+<title>Prepaid SIM for JAPAN</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="${path}/resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="${path}/resources/css/style.css">
+<link rel="stylesheet" href="${path}/resources/css/media.css">
+</head>
 
-.order_form ul {
-    width:100%;
-    list-style-type:none;
-    list-style-position:outside;
-    margin:0px;
-    padding:0px;
-}
-.order_form li{
-     padding:1px;
-     /* border-bottom:2px solid #eee; */ 
-     position:relative;  
-}
-.order_form li:first-child, .contact_form li:last-child {
-    display:inline
-    border-bottom:1px solid #777;
-}
-.required_notification {  
-    color:#d45252;
-    margin:5px 0 0 0;
-    display:inline;
-    float:right;
-}
-.order_form label {
-    width:100%;
-    margin-top: 3px;
-    display:inline-block;
-    float:left;
-    padding:3px;
-}
-.input_txt2 {
-    height:40px;
-    width:100%;
-    padding:5px 8px;
-    font-size: 25px;
-}
-.input_txt {
-    height:40px;
-    width:30%;
-    padding:5px 8px;
-    font-size: 25px;
-}
-.input_button {
-    font-weight: bold;
-    /*height:35px;
-    width:3%;
-     text-align:center;
-    padding:5px 8px;
-    font-size: 25px;
-    padding: 6px 20px */
-}
-.order_form button {
-    margin-left:156px;   
-}
+<body>
+    <header class="head-top" role="navigation">
+        <div class="container">
+            <div class="row head-row">
+                <div class="col-md-2 col-sm-2 col-xs-2 col-head">
+                    <a class="head-back" href="javascript:history.back();"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 col-head">
+                    <p class="head-row-text">购买SimCard</p>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2 col-head">
+                    <a class="head-back" href="/GRCRM_2015"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-.submitButton{
+<form class="order_form" action="orderAdd" method="post" align="left">
+	    <div id="main-div">
+	        <div class="container ">
+	        	<div class="alert alert-info row-top-m" role="alert">
+	        	<div class="row ">
+            		<div class="col-md-4 col-sm-4 col-xs-4 buycardname2">
+            			<label for="name"><%=pord.getProductname()%></label>
+            		</div>
+            	</div>
+            	<div class="row ">
+            		<div class="col-md-4 col-sm-4 col-xs-4 ">
+            			<p class="label-text">价格:</p>
+            		</div>
+            		<div class="col-md-8 col-sm-8 col-xs-8 ">
+            			<label class="label-text" for="unitprice"> <span class="red-text"><%=pord.getPrice()%></span></label>
+            		</div>
+            	</div>
+            	</div>
+	        	<div class="row ">
+            		<div class="col-md-12 col-sm-12 col-xs-12 ">
+            			<div class="alert alert-success" role="alert">请填写正确的信息，输入错误将延误购卡</div>
+            		</div>
+            	</div>
+            	<div class="alert alert-info" role="alert">
+	        	<div class="row ">
+            		<div class="col-md-4 col-sm-4 col-xs-4 label-text">
+            			<p class="vertical"><span class="red-text">*</span>购买数量:</p>
+            		</div>
+            		<div class="col-md-8 col-sm-8 col-xs-8 ">
+            			<input type="image" id="add" src="./images/minus.jpg" 
+            			       height="20" width="20" onclick="numDec(); return false;"/>
+            			<input class="input_txt" name="quantity" 
+            			       type="text" id="quantity" size="3"/> 
+            			<input type="image" id="add" src="./images/plus.jpg" 
+            			       height="20" width="20" onclick="numAdd();return false;"/>
+            		</div>
+            		<input type="hidden" value="28.1" id="price" />
+            	</div>
+            	<div class="row ">
+            		<div class="col-md-4 col-sm-4 col-xs-4 label-text">
+            			<p class="vertical"><span class="red-text">*</span>姓&nbsp;&nbsp;名:</p>
+            		</div>
+            		<div class="col-md-8 col-sm-8 col-xs-8 ">
+            			<input type="text" name="name" class="input_txt2" id ="name"> 
+            		</div>
+            	</div>
+            	<div class="row ">
+            		<div class="col-md-4 col-sm-4 col-xs-4 label-text">
+            			<p class="vertical"><span class="red-text">*</span>手机号码:</p>
+            		</div>
+            		<div class="col-md-8 col-sm-8 col-xs-8 ">
+            			<input type="text" name="telno" class="input_txt2" id ="telno">  
+            		</div>
+            	</div>
+            	<div class="row ">
+            		<div class="col-md-4 col-sm-4 col-xs-4 label-text">
+            			<p class="vertical"><span class="red-text">*</span>收货地址:</p>
+            		</div>
+            		<div class="col-md-8 col-sm-8 col-xs-8 ">
+            			<input type="text" name="ads" class="input_txt2" id ="ads"> 
+            		</div>
+            	</div>
+            	</div>
+	        </div>
+	    </div>
 
-    /* height:30px;
-    background-color:red; */
-    background-color: #68b12f;
-    font-weight: bold;
-    height:40px;
-    width:100%;
-    padding:5px 8px;
-    font-size: 25px;
-    padding: 6px 20px
+    <footer class="tool_foot">
+        <div class="container footer itme_detail_top">
+            <div class="row footer-row">
+            	<div class="col-md-6 col-sm-6 col-xs-6 footer-col ">
+            	<label align="center" for="website" class="foot-text">微信公众号支付:</label>
+            	</div>
+                <div class="col-md-6 col-sm-16 col-xs-6 footer-col">
+                	<input class="submitButton btn btn-success a-btn" type="submit" id="submitButton" value="下单结算" onclick="return checkInfo(quantity.value, name.value, telno.value);"/>
+                </div>
+            </div>
+        </div>
+    </footer>
+</form>
 
-}
-.vertical{
-vertical-align:middle;
-}
-</style>
+
 <script type="text/javascript" src="http://www.daixiaorui.com/Public/js/jquery.min.js"></script>
 <script type="text/javascript">
 function GetRequest() { 
@@ -221,51 +247,5 @@ function numDec(){
 //////////////////////////////////////
 </script>
 </head>
-<body>
-<form class="order_form" action="orderAdd" method="post" align="left">
-<ul>
-    <li>
-         <span class="required_notification">* 表示必填项</span>
-    </li>
-    <li>
-        <label for="name"><%=pord.getProductname()%></label>
-    </li>
-    <li>
-        <label for="name">价格:￥<%=pord.getPrice()%></label>
-    </li>
-    <li>
-        <label for="name">请填写正确的信息，输入错误将延误购卡</label>
-    </li>
-   	  
-	 <li>
-    <label for="website">卡的种类: <%=pord.getSimcardtype()%></label>    
-     <input type="text" name="cardtype" value=<%=pord.getProductcode()%> style="display:none;"/>
-	</li>
-	<li>
-		<p class="vertical">*购买数量: <input type="image" id="add" src="./images/minus.jpg" height="20" width="20" onclick="numDec(); return false;"/><!-- <input type="button" class="input_button" id="add" value=" - " onclick="numDec()" />  -->
-        <input class="input_txt" name="quantity" type="text" id="quantity" /> 
-        <input type="image" id="add" src="./images/plus.jpg" height="20" width="20" onclick="numAdd();return false;"/><!-- <input type="button"  class="input_button" id="minus" value=" + " onclick="numAdd()" /> --></p>
-		<input type="hidden" value="28.1" id="price" />
-	</li>
-	 <li>
-        <label for="name">*姓名: </label>
-        <input type="text" name="name" class="input_txt2" id ="name">        
-    </li>
-    <li>
-    <label for="email">*手机号码: </label>  
-    <input type="text" name="telno" class="input_txt2" id ="telno"> 
-    </li>
-	<li>
-	 <label for="address">*收货地址: </label>  
-    <input type="text" name="ads" class="input_txt2" id ="ads"> 
-	</li>	
-	<li>
-	 <label align="center" for="website">使用微信公众号支付:</label>
-    </li>		
-	<li>
-	   <input class="submitButton" type="submit" id="submitButton" value="下单结算" onclick="return checkInfo(quantity.value, name.value, telno.value);"/>
-	</li>
-</ul>
-</form>
 </body>
 </html>
