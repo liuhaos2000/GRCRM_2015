@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <%@ page import="java.util.List" %>
 <%@ page import="demo.javabean.OrderInfo" %>
 <%@ page import="org.apache.struts2.ServletActionContext" %>
@@ -12,27 +14,33 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 <html>  
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <head>
-    <meta charset="utf-8">
-    <title>SimCard订单信息</title>
-    <link rel="stylesheet" media="screen" href="styles.css" rel="external nofollow"  >
-    <style type="text/css">
-    .myTable {border-collapse:collapse;}
-    .myTable td {border:1px solid black; height:40px;}
-    .myTable th {border:1px solid black; height:45px;}
-    
-    .required_notification {
-    color:#d45252;
-    margin:5px 0 0 0;
-    display:inline;
-    float:center;
-    font-size: 25px;
-}
-    </style>
- </head>
+<head>
+<meta charset="utf-8">
+<title>Prepaid SIM for JAPAN</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="${path}/resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="${path}/resources/css/style.css">
+<link rel="stylesheet" href="${path}/resources/css/media.css">
+</head>
 <body>  
-
+    <header class="head-top" role="navigation">
+        <div class="container">
+            <div class="row head-row">
+                <div class="col-md-2 col-sm-2 col-xs-2 col-head">
+                    <a class="head-back" href="javascript:history.back();"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 col-head">
+                    <p class="head-row-text">SimCard产品列表</p>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2 col-head">
+                    <a class="head-back" href="/GRCRM_2015"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </div>
+    </header>
   
 <!-- <table class="myTable" align="center" width=100% height="652"  id="orderTable"> -->
  
@@ -71,7 +79,7 @@ try{
 }
 if(ddwhoneList.size()!=0)
 {
-	 out.print("<table class='table table-striped' align='center' width=100%  id='orderTable'>");
+	 out.print("<table class='table table-bordered' align='center' width=100%  id='orderTable'>");
 	 out.print("<tr id='orderTr' bgcolor='#3DB7CC'>");
      out.print("<th align='center'>"+"订单号"+"</th>");
 	 out.print("<th align='center'>"+"商品"+"</th>");
@@ -81,18 +89,18 @@ if(ddwhoneList.size()!=0)
      
 	for(int i=0;i<ddwhoneList.size();i++)
 	{
-	OrderInfo news = (OrderInfo)ddwhoneList.get(i);
+		OrderInfo news = (OrderInfo)ddwhoneList.get(i);
 	
-	out.print("<tr>");
-	if(news.getStatus().equals("预约")){
-	out.print("<td align='center'>"+"<a href=http://localhost:8080/GRCRM_2015/order.jsp?orderno=" + news.getOrderno() + ">" + news.getOrderno()+"</a>"+"</td>");
-	}else{
-		out.print("<td align='center'>"+ news.getOrderno()+"</td>");	
-	}
-	out.print("<td align='center'>"+news.getCommodity()+"</td>");
-	out.print("<td align='center'>"+news.getStatus()+"</td>");
-	out.print("<td align='center'>"+news.getTelno()+"</td>");
-	out.print("</tr>");
+		out.print("<tr>");
+		if(news.getStatus().equals("预约")){
+			out.print("<td >"+"<a href=http://localhost:8080/GRCRM_2015/order.jsp?orderno=" + news.getOrderno() + ">" + news.getOrderno()+"</a>"+"</td>");
+		}else{
+			out.print("<td >"+ news.getOrderno()+"</td>");	
+		}
+		out.print("<td >"+news.getCommodity()+"</td>");
+		out.print("<td >"+news.getStatus()+"</td>");
+		out.print("<td >"+news.getTelno()+"</td>");
+		out.print("</tr>");
 	
 	}
 	out.print("</table>");

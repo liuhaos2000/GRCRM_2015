@@ -164,6 +164,12 @@ pord = (CardInfo)ddwhoneList.get(0);
 
 <script type="text/javascript" src="http://www.daixiaorui.com/Public/js/jquery.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function() {
+    $(function(){
+        $("#main-div").height($(window).height()-$("header").height()-52);
+        $("#main-div").css({"overflow":"auto"});
+    });
+});
 function GetRequest() { 
 	var url = location.search; //获取url中"?"符后的字串 
 	var theRequest = new Object(); 
